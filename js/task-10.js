@@ -15,11 +15,15 @@ create.addEventListener('click', createBoxes )
   
 
 function createBoxes(amount) {
-  for (let i = 0; i < amount; i+= 1) {
+  let divE1 = "";
+  for (let i = 0; i <= amount; i += 1) {
+    input.value = amount;
+    let size = 30;
+    const color = getRandomHexColor();
+    divE1 += `<div style="width:${size}px; heigth:${size}px; background-color:${color}"></div>`
+    size += 10;
   }
-  if (Number(input.value >= 1 && Number(input.value) <= 100)) {
-    amount = Number(input.value)
-  }
+  return divE1;
 };
 
 destroy.addEventListener('click', destroyBoxes);
